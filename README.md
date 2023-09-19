@@ -17,7 +17,13 @@
 		w procesie komunikacji językowej. tekst w semiotyce – każdy wytwór kultury 
 		(tekst kultury)  –  – słowa utworu muzycznego, np. piosenki lub arii.
 		tekst spójny – koherentna np. pod względem sema</h3>
-		<button OnClick="zmiana()">zmiania motywu</button>			
+		<ul>
+			<li>kawa</li>
+			<li>herbata</li>
+			<li>mleko</li>
+		  </ul>
+		<button OnClick="zmiana()">zmiania motywu</button>
+
 		<script>
         function zmianakoloru(color) {
         document.body.style.background = color;
@@ -28,5 +34,6 @@
             element.innerHTML;
         }
 	</script>
+
 </body>
 </html>
