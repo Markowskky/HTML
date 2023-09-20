@@ -12,7 +12,7 @@
 <body>
 	<p id="akapit"> JasnyKot&#9788;</p>
 
-	<h3>	&#9788; &#x263C;	W tekstologii – utrwalony (najczęściej w postaci pisemnej) 
+	<h3 id="tekst"> &#9788; &#x263C;	W tekstologii – utrwalony (najczęściej w postaci pisemnej) 
 		ciąg znaków językowych, przyjmowany jako niezmienny i niemogący podlegać przemianom 
 		w procesie komunikacji językowej. tekst w semiotyce – każdy wytwór kultury 
 		(tekst kultury)  –  – słowa utworu muzycznego, np. piosenki lub arii.
@@ -22,13 +22,23 @@
 			<li>herbata</li>
 			<li>mleko</li>
 		  </ul>
+
 		<button OnClick="zmiana()">zmiania motywu</button>
+		<button OnClick="koloruj()">zmiana tekstu</button>
 
 		<script>
         function zmianakoloru(color) {
         document.body.style.background = color;
 		}
-		const element = document.getElementById
+		const element = document.getElementById('tekst')
+
+		function koloruj() {
+	
+		element.style.color="Magenta";
+
+
+		}
+
         function zmiana() {
             zmianakoloru('cyan');
             element.innerHTML;
