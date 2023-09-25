@@ -1,4 +1,5 @@
-zmiana tłą
+zmiana tłą funkcja const
+fdsdasdsada
 
 
 
