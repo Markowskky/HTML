@@ -1,5 +1,4 @@
 zmiana tłą funkcja const
-fdsdasdsada
 
 
 
