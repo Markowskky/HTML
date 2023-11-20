@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		table, td{
+			border-collapse:collapse;
+			border:3px solid transparent;
+		}
+		td{
+		width:45px;
+		padding:0;
+		}
+		.calc{
+			border-width:2px;
+			border-color:gray;
+			border-style:solid;
+			padding:8px;
+			bprder-radius:5px;
+
+		}
+		button{
+		font-size:14px;
+		background-color:transparent;
+		width:100%;
+		border-bottom-left-radius:8px;
+		border-bottom-right-radius:8px;
+		}
+		button,tall{
+		height:54px;
+		}
+		input{
+		width:calc(100% -8px);
+		}
+		container{
+		broder-radius:30px;
+		margin:auto;
+		width:200px;
+		padding;10px;
+		background-color:gray;
+		border:2px inset gray;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+<div class="calc">
+	<div c>CITIZEN</div>
+	<div>LC-110N</div>
+	<div>AUTO POWER OFF</div>
+    <table>
+		<tr>
+			<td colspan="4"></td>
+			<input type="text", id="screen">
+        </tr>
+        <tr>
+			<td><button class="btn">C/CE</button></td>
+			<td><button class="btn">OFF</button></td>
+			<td><button class="btn">&#8730;</button></td>
+			<td><button class="btn">%</button></td>
+        </tr>
+		<tr>
+			<td><button class="btn">MRC</button></td>
+			<td><button class="btn">M-</button></td>
+			<td><button class="btn">M+</button></td>
+			<td><button class="btn">&#247;</button></td>
+        </tr>
+		<tr>
+			<td><button class="btn">7</button></td>
+			<td><button class="btn">8</button></td>
+			<td><button class="btn">9</button></td>
+			<td><button class="btn">X</button></td>
+        </tr>
+		<tr>
+			<td><button class="btn">4</button></td>
+			<td><button class="btn">5</button></td>
+			<td><button class="btn">6</button></td>
+			<td><button class="btn">-</button></td>
+        </tr>
+		<tr>
+			<td><button class="btn">1</button></td>
+			<td><button class="btn">2</button></td>
+			<td><button class="btn">3</button></td>
+			<td rowspan="2"><button class="btn tall">+</button></td>
+        </tr>
+		<tr>
+			<td><button class="btn">0</button></td>
+			<td><button class="btn">.</button></td>
+			<td><button class="btn">=</button></td>
+        </tr>
+      </table>
+</div>
+<script>
+	let Liczba1 = null;
+	let Liczba2 = null;
+	let dzialanie =null;
+	const screen = document.querySelector('#screen');
+	const btns = document.querySelectorAll('.btn');
+
+	for(let i=0; i < btns.length; i++){
+		console.log(btns[i])
+		btns[i].addEventListener('click', function(event){licz(event)})
+	}
+	
+	function licz(event){
+		//screen.value(event.target.innerText)
+		switch(event.target.innerText){
+			default:
+				if(liczba1 == null){
+				liczba1 =event.target.innerText
+				screen.value = liczba1
+				} else if(dzialanie == null){
+				liczba1 += event.target.innerText
+				screen.value = liczba1
+				} else {
+					if(liczba2 ==null){
+						liczba2=event.target.innerText
+						screen.value = liczba2
+					} else{
+						liczba2+=event.target.innerText;
+						screen.value = liczba2
+						}
+					}
+		
+			consol.log(liczba1,liczba2)
+			screen.value =wynik;
+			
+			
+			
+		}
+	}
+</script>
+</body>
+</html>
