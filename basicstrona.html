@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+     <head>
+          <meta charset="UTF-8" />
+	 <style>
+	 
+	 body{font-family:"Arial black";}
+	.menu{position:fixed;
+	left:0;
+	top:0;
+	display:flex;
+	justify-content:space-evenly;
+	list-style:none;
+	
+		}
+	.menu a{
+	display:block;
+	background:gray;
+	padding:10px;
+	width:100px;
+	text-align:center
+			}
+	.menu > li > ul {background:red;display:none;}
+	.menu a:hover ~ ul{
+		background:#add8e6;
+		display:block;
+	}
+	.guzik{background-color:transparent;left:50px;top:50px;z-index:10;display:flex;width:50px;height:50px;font-size:50px;}
+	a{text-decoration:none;}
+	p{margin-top:100px}
+	ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	width:100%;
+	background-color:#707070;
+	padding:10px
+		}
+	@media only screen and (max-width:700px){
+	body{background-color:lightblue;}
+		.menu{display:none;flex-direction:column;left:57px;}
+		.guzik{display:flex;border-color:lightblue;}
+		}
+	@media only screen and (max-width:800px){
+	body{background-color:red;
+		}
+		.menu{display:none;flex-direction:column;left:57px;}
+		.guzik{display:flex;border-color:red;}
+		}
+	@media only screen and (max-width:600px){
+	body{background-color:yellow;
+		}
+		.menu{display:none;flex-direction:column;left:57px;}
+		.guzik{display:flex;border-color:yellow;}
+		}
+	
+	 </style>		  
+     </head>
+     <body>
+	  <button class="guzik" OnClick="button()">≡</button>
+	  
+		<ul id="menu"class="menu">
+			<li>
+				<a href="#">Pierwszy</a>
+				<ul>
+					<li>Sub 1</li>
+					<li>Sub 2</li>
+					<li>Sub 3</li>
+					<li>Sub 4</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Drugi</a>
+				<ul>
+					<li>Sub 1</li>
+					<li>Sub 2</li>
+					<li>Sub 3</li>
+			</ul>
+			</li>
+			<li>
+				<a href="#">Trzeci</a>
+			</li>
+			<li>
+				<a href="#">Czwarty</a>			
+				<ul>
+					<li>Sub 1</li>
+					<li>Sub 2</li>
+			</ul>
+		</li>
+		</ul>
+		
+	 <p>tekst </p>
+	
+	 <script>
+	 
+	document.getElementById("click");
+	const menu =document.getElementById("menu");
+	
+	window.addEventListener('resize', resize);
+	console.log("pik")
+	 
+	 
+	 let open = true
+	 
+	 function button(){
+	 if(open == true){
+	  console.log("myk")//zmiana menu widocznosci
+	  menu.style.display="flex"
+	  open = false
+		}else{
+		open ==false
+		console.log("pyk")
+		 menu.style.display="none"
+		open = true
+		}
+	 }
+	 function resize(){
+	 let width = window.innerWidth
+	 console.log(width)
+	 if(width>1000){
+	 menu.style.display="flex"
+	 }else{menu.style.display="none"}
+	 }
+	 
+	 
+	 </script>
+     </body>
+</html>
