@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scake=1.0">
+		<title>Dokument</title>
+		<style>
+		#mapa{
+		border:1px solid black;
+		background-color:lightblue;
+		width:500px;
+		height:300px;
+		position:absolute;
+		 top:50%;
+		 left:50%;
+		 translate:-50% -50%;
+		}
+		#ulty{
+		font-size:30px;
+		border:1px solid black;
+		background-color:yellow;
+		width:500px;
+		height:180px;
+		position:absolute;
+		 top:135%;
+		 left:50%;
+		 translate:-50% -50%;
+		 }
+		#sz1{
+		text-align: center;
+		font-size:30px;
+		border:1px solid black;
+		background-color:rebeccapurple;
+		width:200px;
+		height:300px;
+		position:absolute;
+		 top:50%;
+		 left:122%;
+		 translate:-50% -50%;}
+
+		 #sz2{
+		text-align: center;
+		font-size:30px;
+		border:1px solid black;
+		background-color:rgb(15, 146, 10);
+		width:200px;
+		height:300px;
+		position:absolute;
+		 top:50%;
+		 left:-22%;
+		 translate:-50% -50%;
+		}
+		
+		#tytul{
+		font-size:80px;
+		text-align:center;
+		position:absolute;
+		top:9%;
+		left:50%;
+		translate:-50% -50%;
+		}
+		#punkty2{
+		font-size:30px;
+		width:1000px;
+		height:40px;
+		border:1px solid black;
+		text-align:center;
+		position:fixed;
+		top:95%;
+		left:50%;
+		translate:-50% -50%;
+		}
+		#guzik{
+		width:120px;
+		height:120px;
+		position:absolute;
+		 top:50%;
+		 left:50%;
+		 translate:-50% -50%;
+		}
+		#punkty{
+		float:left;
+		font-size:30px;
+		width:1000px;
+		height:40px;
+		text-align:center;
+		position:fixed;
+		top:95%;
+		left:30%;
+		translate:-50% -50%;
+		}
+		</style>
+		</head>
+		<body>
+			<div id="tytul">The Clock Clicker</div>
+			<div id="mapa">
+			<div id="ulty">Umiejętności
+				<img src="narwal1.jpg">
+			<button id="sklep1"  OnClick="sklep1">Kup mnie</button>
+			<img src="narwal2.jpg">
+			<button id="sklep2"  OnClick="sklep2">Kup mnie</button>
+			<img src="narwal3.jpg">
+			<button id="sklep3"  OnClick="sklep3">Kup mnie</button>
+			<img src="narwal4.jpg">
+			<button id="sklep4"  OnClick="sklep4">Kup mnie</button>
+
+
+			</div>
+			<div id="sz1">Szafka1</div>
+			<div id="sz2">Szafka2</div>
+			<button id="guzik"  OnClick="guzik">Kliknij mnie</button>
+			</div>
+			<div id="punkty">Suma Punktów:</div>
+			<div id="punkty2"></div>
+	<script>
+const licznik =document.getElementById("punkty2")
+const btn =document.getElementById("guzik")
+let ilosc = 0
+ btn.addEventListener("click",klik);
+
+function klik() {
+ilosc++
+licznik.innerText = ilosc
+	
+   
+   
+   }
+    setTimeout(function(){ window. location. reload(); }, 5000);
+switch (new Date().getDay()) {
+  case 0:
+    day = "Niedziela";
+    break;
+  case 1:
+    day = "Poniedziałek";
+    break;
+  case 2:
+     day = "Wtorek";
+    break;
+  case 3:
+    day = "Środa";
+    break;
+  case 4:
+    day = "Czwartek";
+    break;
+  case 5:
+    day = "Piątek";
+    break;
+  case 6:
+    day = "Sobota";
+}
+
+switch (new Date().getHours()) {
+  case 0:
+    hour = "0";
+    break;
+  case 1:
+    hour = "1";
+    break;
+  case 2:
+    hour = "2";
+    break;
+  case 3:
+    hour = "3";
+    break;
+  case 4:
+    hour = "4";
+    break;
+  case 5:
+    hour = "5";
+    break;
+  case 6:
+    hour = "6";
+    break;
+    case 7:
+    hour = "7";
+    break;
+  case 8:
+    hour = "8";
+    break;
+  case 9:
+    hour = "9";
+    break;
+  case 10:
+    hour = "10";
+    break;
+  case 11:
+    hour = "11";
+    break;
+  case 12:
+    hour = "12";
+    break;
+  case 13:
+    hour = "13";
+    break;
+  case 14:
+    hour = "14";
+    break;
+  case 15:
+    hour = "15";
+    break;
+  case 16:
+    hour = "16";
+    break;
+  case 17:
+    hour = "17";
+    break;
+  case 18:
+    hour = "18";
+    break;
+   case 19:
+    hour = "19";
+    break;
+  case 20:
+    hour = "20";
+    break;
+  case 21:
+    hour = "21";
+    break;
+  case 22:
+    hour = "22";
+    break;
+  case 23:
+    hour = "23";
+}
+  
+switch (new Date().getMinutes()) {
+  case 0:
+    minute = "00";
+    break;
+  case 1:
+    minute = "01";
+    break;
+  case 2:
+    minute = "02";
+    break;
+  case 3:
+    minute = "03";
+    break;
+  case 4:
+    minute = "04";
+    break;
+  case 5:
+    minute = "05";
+    break;
+  case 6:
+    minute = "06";
+    break;
+    case 7:
+    minute = "07";
+    break;
+  case 8:
+    minute = "08";
+    break;
+  case 9:
+    minute = "9";
+    break;
+  case 10:
+    minute = "10";
+    break;
+  case 11:
+    minute = "11";
+    break;
+  case 12:
+    minute = "12";
+    break;
+  case 13:
+    minute = "13";
+    break;
+  case 14:
+    minute = "14";
+    break;
+  case 15:
+    minute = "15";
+    break;
+  case 16:
+    minute = "16";
+    break;
+    case 17:
+    minute = "17";
+    break;
+  case 18:
+    minute = "18";
+    break;
+  case 19:
+    minute = "19";
+    break;
+  case 20:
+    minute = "20";
+    break;
+  case 21:
+    minute = "21";
+    break;
+  case 22:
+    minute = "22";
+    break;
+  case 23:
+    minute = "23";
+    break;
+  case 24:
+    minute = "24";
+    break;
+  case 25:
+    minute = "25";
+    break;
+  case 26:
+    minute = "26";
+    break;
+  case 27:
+    minute = "27";
+    break;
+  case 28:
+    minute = "28";   
+    break;
+  case 29:
+    minute = "29";
+    break;
+  case 30:
+    minute = "30";
+    break;
+  case 31:
+    minute = "31";
+    break;
+  case 32:
+    minute = "32";
+    break;
+  case 33:
+    minute = "33";
+    break;
+  case 34:
+    minute = "34";
+    break;
+  case 35:
+    minute = "35";
+    break;
+  case 36:
+    minute = "36";
+    break;
+  case 37:
+    minute = "37";
+    break;
+  case 38:
+    minute = "38";
+    break;
+  case 39:
+    minute = "39";
+    break;
+  case 40:
+    minute = "40";
+    break;
+  case 41:
+    minute = "41";
+    break;
+  case 42:
+    minute = "42";
+    break;
+  case 43:
+    minute = "43";
+    break;
+  case 44:
+    minute = "44";
+    break;
+  case 45:
+    minute = "45";
+    break;
+  case 46:
+    minute = "46";
+    break;
+  case 47:
+    minute = "47";   
+    break;
+  case 48:
+    minute = "48";
+    break;
+  case 49:
+    minute = "49";
+    break;
+  case 50:
+    minute = "50";
+    break;
+  case 51:
+    minute = "51";
+    break;
+  case 52:
+    minute = "52";
+    break;
+  case 53:
+    minute = "53";
+    break;
+  case 54:
+    minute = "54";
+    break;
+  case 55:
+    minute = "55";
+    break;
+  case 56:
+    minute = "56";
+    break;
+  case 57:
+    minute = "57";
+    break;
+  case 58:
+    minute = "58";
+    break;
+  case 59:
+    minute = "59";
+}
+        
+    document.write(day) 
+    document.write("<br>",hour)
+    document.write(":",minute)
+    
+
+  </script>
+	</body>
+</html> 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang=pl>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css"></link>
+<Style>
+#output{
+border:1px solid black;
+width: 245px;
+height: 100px;
+</style>
+</head>
+<body>
+Szukana fraza:<input type="text" id="input" oninput="szukanie()"></input>
+<br><textarea id="myarea" oninput="blok()"></textarea><br>
+WSZYSTKICH ZNAKÓW: <span id="znaki"></span><br>
+ZNALEZIONO NA POZYCJI:<span id="pozycja"></span>
+<br>
+<div id="output"></div>
+
+<script>
+const myarea = document.getElementById("myarea")
+let znaki = document.getElementById("znaki")
+let output = document.getElementById("output")
+let input = document.getElementById("input")
+
+
+function blok() {
+	let text3 = myarea.value
+	let ilosc = text3.length
+	znaki.innerText = ilosc
+	output.innerText = text3
+	let fraza =text3.indexOf(input.value)
+	pozycja.innerText = fraza+1
+	
+	}
+
+	
+
+	
+	
+
+
+ </script>
+</body>
+</html>

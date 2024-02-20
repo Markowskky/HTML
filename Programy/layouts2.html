@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scake=1.0">
+		<title>Layouts2</title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+				box-sizing: border-box;
+				}
+			html, body{
+			height:100%;
+			}
+			section{
+			padding:10px;
+			outline:1px solid red;
+			
+			}
+			section  > div {
+			background:gray;
+			border:10px solid green;
+			height:100%;
+			}
+			
+			#s1{float:left;width:30%;height:30%;}
+			#s2{float:left;width:70%;height:30%;}
+			#s3{float:left;width:50%;height:40%;}
+			#s4{float:left;width:50%;height:40%;}
+			#s5{clear:both;height:30%;}
+		</style>
+		</head>
+
+	<body>	
+		<section ID="s1"><div>s1 (w:30%,h:30%)</div></section>
+        <section ID="s2"><div>s2 (w:70%,h:30%)</div></section>
+        <section ID="s3"><div>s3 (w:50%,h:40%)</div></section>
+        <section ID="s4"><div>s4 (w:50%,h:40%)</div></section>
+        <section ID="s5"><div>s5(h:30%)</div></section>
+	</body>
+</html> 
+

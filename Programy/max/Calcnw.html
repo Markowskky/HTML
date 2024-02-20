@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>document</title>
+	<style>
+		table, td{
+			border-collapse:collapse;
+			border:3px solid transparent;
+		}
+		.calc{
+			border-radius: 10px;
+			background-color:lime;
+			margin:auto;
+			width:150px;
+			height:250px;
+			border:2px ridge black;
+			border-radius:25px;
+			padding:10px;
+			
+		}
+		button{
+		
+			width:100%;
+			border-radius: 2px;
+			background-color: transparent;
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
+		button.tall{
+			height:64px;
+		}
+		td{
+			width:30px;
+			padding:0;
+		{
+		input{
+			width:calc(100% - 8px);
+		}
+
+	</style>
+</head>
+<body>
+<IMG SRC="animation1.gif">
+<div class="calc">
+	<div>CITIZEN</div>
+	<div>LC-110N</div>
+	<div>AUTO POWER OFF</div>
+    <table>
+		<tr>
+			<td colspan="4"></td>
+			<input type="text", id="screen">
+        </tr>
+        <tr>
+			<td><button class="btn">C/CE</button></td>
+			<td><button class="btn">OFF</button></td>
+			<td><button class="btn">&#8730;</button></td>
+			<td><button class="btn">%</button></td>
+        </tr>
+		<tr>
+			<td><button class="btn">MRC</button></td>
+			<td><button class="btn">M-</button></td>
+			<td><button class="btn">M+</button></td>
+			<td><button class="btn">/</button></td>
+        </tr>
+		<tr>
+			<td><button class="btn">7</button></td>
+			<td><button class="btn">8</button></td>
+			<td><button class="btn">9</button></td>
+			<td><button class="btn">x</button></td>
+        </tr>
+		<tr>
+			<td><button class="btn">4</button></td>
+			<td><button class="btn">5</button></td>
+			<td><button class="btn">6</button></td>
+			<td><button class="btn">-</button></td>
+        </tr>
+		<tr>
+			<td><button class="btn">1</button></td>
+			<td><button class="btn">2</button></td>
+			<td><button class="btn">3</button></td>
+			<td rowspan="2"><button class="btn tall">+</button></td>
+        </tr>
+		<tr>
+			<td><button class="btn">0</button></td>
+			<td><button class="btn">.</button></td>
+			<td><button class="btn">=</button></td>
+        </tr>
+      </table>
+</div>
+<script>
+	let liczba1 = null;
+	let liczba2 = null;
+	let dzialanie = null;
+	let wyink = 0;
+	
+	
+	
+	
+	
+	
+	const screen = document.querySelector('#screen');
+	const btns = document.querySelectorAll('.btn');
+
+	for(let i=0; i < btns.length; i++){
+		console.log(btns[i])
+		btns[i].addEventListener('click', function(event){licz(event)})
+	}
+	
+	function licz(event){
+		//screen.value(event.target.innerText)
+		switch(event.target.innerText){
+			
+			case "1":
+				if(liczba1 == null){
+					liczba1 = '1'
+				}
+				if(liczba1 !=null && dzialanie == null){
+					liczba1 += '1'
+				} else {
+					if (liczba2 == null){
+						liczba2 = '1'
+						screen.value=liczba2
+					}else{
+						liczba2 += '1';
+						screen.value=liczba2
+					}
+			
+			break;
+		
+		case "2":
+			liczba1 += '2'
+			break;
+		case "3":
+			liczba1 += '3'
+			break;
+		case "4":
+			liczba1 += '4'
+			break;
+		case "5":
+			liczba1 += '5'
+			break;
+		case "6":
+			liczba1 += '6'
+			break;
+		case "7":
+			liczba1 += '7'
+			break;
+		case "8":
+			liczba1 += '8'
+			break;
+		case "9":
+			liczba1 += '9'
+			break;
+		case "=":
+			wynik = parsefloat(liczba1) + parsefloat(liczba2);
+			screen.value = wynik;
+			break;
+			case ".":
+
+			break;
+		case "+":
+			dzialanie = 'dodaj'
+			break;
+			case "-":
+
+			break;
+			case "x":
+
+			break;
+			case "/":
+
+			break;
+			case "%":
+
+			break;
+			case "√":
+
+			break;
+			case "C/CE":
+
+			break;
+			case "OFF":
+
+			break;
+			
+		}
+	}
+</script>
+</body>
+</html>

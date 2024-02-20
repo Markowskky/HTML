@@ -1,0 +1,53 @@
+<!DOCTYPE.html>
+<html lang="en">
+	
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		table, td{
+			border-collapse: collapse;
+			border:3px solid red;
+		}
+		.calc
+			background-color: gray;
+			margin:auto;
+			width:200px;
+		}
+		</style>
+</head>
+
+<body>
+
+
+  <input placeholder="Liczba 1" type="number" id="liczba 1" name="liczba 1" > 
+  <br><br>
+  <input placeholder="Liczba 2" type="number" id="liczba 2" name="liczba 2" > 
+  <br><br>
+  <input placeholder="Wynik"  type="value" id="wynik"><br><br>
+  <button onClick="dodaj()" id="guzik1"> dodawanie</button><br><br>
+  <button onClick="odejmij()" id="guzik2"> odejmowanie</button><br><br>
+  <button onClick="pomnoz ()" id="guzik3"> mnożenie</button><br><br>
+  <button onClick="podziel()" id="guzik4"> dzielenie</button><br><br>
+
+<script>
+	const L1 = document.getElementById("liczba 1")
+	const L2 = document.getElementById("liczba 2")
+	const wynik = document.getElementById("wynik")
+	const btn1 = document.getElementById("guzik1")
+	const btn2 = document.getElementById("guzik2")
+	const btn3 = document.getElementById("guzik3")
+	const btn4 = document.getElementById("guzik4")
+	function dodaj(){
+	wynik.value=parseInt(L1.value) + parseInt (L2.value)}
+	function odejmij(){
+	wynik.value=parseInt(L1.value) - parseInt (L2.value)}
+	function pomnoz(){
+	wynik.value=parseInt(L1.value) * parseInt (L2.value)}
+	function podziel(){
+	wynik.value=parseInt(L1.value) / parseInt (L2.value) }
+  </script>
+
+</body>
+</html>

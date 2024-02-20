@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang=pl>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css"></link>
+</head>
+<body>
+<Style>
+#Miejsce{width:245px;}
+#rok{
+border-style:solid; 
+border-width:2x;
+border-color:black;
+width:245px;
+margin-left:5px;
+}	
+	
+</style>
+<div id="h1">
+</div>
+Szukana fraza:<input type="text" id="lupa" oninput="szukanie()"></input>
+<br><textarea id="Miejsce" oninput="blok()"></textarea><br>
+WSZYSTKICH ZNAKÓW: <span id="licznik"></span><br>
+ZNALEZIONO NA POZYCJI:
+<br>
+
+<div id="rok" oninput="screen()"></div>
+
+
+<script>
+let miejsce = document.getElementById("Miejsce")
+let licznik = document.getElementById("licznik")
+let lupa = document.getElementById("lupa")
+let rok = document.getElementById("rok")
+
+
+function blok() {
+	let text3 = miejsce.value
+	let ilosc = text3.length
+	licznik.innerText = ilosc
+	rok.innerText = text3
+	
+	}
+function szukanie(){
+	let detek = lupa.value
+	console.log(detek)
+	
+	}
+
+	
+
+	
+	
+
+
+ </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scake=1.0">
+		<title>Layout</title>
+	<style>
+		section{
+        background:white;
+        margin:10px;
+        border:1px solid gray;
+        }
+        body{
+        text-align: center;
+        }
+        main{box-sizing:border-box}
+        #left,#center{
+            float:left;
+        }
+        #top{
+            height:100px;
+        }
+        #left{
+            width:200px;
+            height:500px;
+        }
+        #center{
+            width:calc(100% - 420px);
+            height:500px;
+        }
+        #right{
+            width:150px;
+            height:500px;
+            float:right;
+        }
+        #down{
+            height:50px;
+            clear:both;
+        }
+    </style>
+    </head>
+
+	<body>
+		<main>
+		<section ID="top">top</section>
+        <section ID="left">left</section>
+        <section ID="center">center</section>
+        <section ID="right">right</section>
+        <section ID="down">down</section>
+		</main>
+
+	</body>
+</html> 

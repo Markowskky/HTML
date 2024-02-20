@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		table, td{
+			border-collapse:collapse;
+			border:3px solid transparent;
+		}
+		td{
+			width:45px;
+			padding:0;
+		}
+		.calc{
+			border-width:2px;
+			border-radius:20px;
+			border-style:ridge;
+			background-color:grey;
+			padding:8px;
+			color:white;
+		}
+		button{
+			padding:1px;
+			font-size:16px;
+			background-color:transparent;
+			color:white;
+			width:100%;
+			border-radius:4px;
+			border-bottom-left-radius:8px;
+			border-bottom-right-radius:8px;
+		}
+		button.tall{
+			height:53px;
+		}
+		input{
+			width:calc(100% - 20px);
+			padding:5px;
+			text-align:right;
+			font-style:italic;
+			border-radius:8px;
+			border:5px inset darkgrey;
+		}
+		.container{
+			border-radius:30px;
+			border:2px inset grey;
+			margin:auto;
+			padding:10px;
+			background-color:grey;
+			width:200px;
+		}
+		.small{
+			font-weight:bold;
+			font-size:10px;
+		}
+		.calc > div:nth-child(1){
+			border:1px;
+			float:left;
+			font-size:20px;
+			margin-top:3px;
+		}
+		.calc > div:nth-child(2){
+		margin-right:5px;
+			border:1px;
+			text-align:center;
+			float:right;
+			font-family:Arial;
+		}
+		hr{
+			margin:0;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+	<div class="calc">
+	<div>CITIZEN</div>
+	<div>
+		<div>LC-110N</div>
+		<hr>
+		<div class="small">AUTO POWER OFF</div>
+	</div>
+    <table>
+		<tr>
+			<td colspan="4"></td>
+			<input id="ekran">
+        </tr>
+        <tr>
+			<td><button class="btn">C/CE</button></td>
+			<td><button class="btn">OFF</button></td>
+			<td><button class="btn">&#8730;</button></td>
+			<td><button class="btn">%</button></td>
+        </tr>
+		<tr>
+			<td><button class="btn">MRC</button></td>
+			<td><button class="btn">M-</button></td>
+			<td><button class="btn">M+</button></td>
+			<td><button class="btn">&#247;</button></td>
+        </tr>
+		<tr>
+			<td><button class="btn">7</button></td>
+			<td><button class="btn">8</button></td>
+			<td><button class="btn">9</button></td>
+			<td><button class="btn">X</button></td>
+        </tr>
+		<tr>
+			<td><button class="btn">4</button></td>
+			<td><button class="btn">5</button></td>
+			<td><button class="btn">6</button></td>
+			<td><button class="btn">-</button></td>
+        </tr>
+		<tr>
+			<td><button class="btn">1</button></td>
+			<td><button class="btn">2</button></td>
+			<td><button class="btn">3</button></td>
+			<td rowspan="2"><button class="tall">+</button></td>
+        </tr>
+		<tr>
+			<td><button class="btn">0</button></td>
+			<td><button class="btn">.</button></td>
+			<td><button class="btn">=</button></td>
+        </tr>
+      </table>
+</div>
+</div>
+<script>
+let L1 = null;
+let subL1 = null;
+let L2 = null;
+let subL2 = null;
+let DZ = null;
+let P = null;
+let g = null;
+let a = null;
+
+const ekran = document.querySelector('#ekran')
+const guz = document.querySelectorAll(".btn")
+	console.log(guz)
+
+for(let i=0; i< guz.length; i++){
+	guz[i].addEventListener('click', function(event){licz(event)})
+	
+}
+	function licz(event){
+		
+		//console.log(event.target.innerText)
+		switch(event.target.innerText){
+			
+			
+			default:
+				
+				if(L1 == null ){
+					L1 = event.target.innerText;
+					ekran.value = (L1)
+					console.log(L2)
+						console.log(L1)
+						a = 0
+					} else if (a == 0) {
+						
+						L1 += event.target.innerText;
+						ekran.value = (L1)
+						console.log(L2)
+						console.log(L1)
+					} else if (L2 == null && a == 1 && L1 != null) {
+						
+						L2 = event.target.innerText;
+						ekran.value = (L2)
+						console.log(L2)
+						console.log(L1)
+						
+						
+					} else {
+						
+						L2 += event.target.innerText;
+						ekran.value = (L2)
+						console.log(L2)
+						console.log(L1)
+					}
+					
+				 
+			break;
+			
+			
+
+
+			case "+":
+				ekran.value = ("+")
+				
+				DZ = parseInt(L1) + parseInt(L2);
+				g = 0;
+				a = 1;
+			break;		
+
+			case "-":
+				ekran.value = ("-")
+				DZ = L1 - L2;
+				a = 1;
+			break;		
+
+			case "*":
+				ekran.value = ("*")
+				DZ = L1 * L2;
+				a = 1;
+			break;		
+
+			case "/":
+				ekran.value = ("/")
+				DZ = L1 / L2;
+				a = 1;
+			break;		
+
+			case "%":
+				
+				ekran.value = ("%")
+				DZ = L1 % L2;
+				a = 1;
+			break;	
+			
+			case "=":
+				
+				P = parseInt(DZ)
+				ekran.value = (P)
+				
+				
+			break;		
+
+			case "C/CE":
+				DZ = 0;
+				L1 = null;
+				L2 = null;
+				ekran.value = (null)
+				
+			case "MRC":
+				a = 0;
+				
+		}
+		
+	}
+</script>
+</body>
+</html>

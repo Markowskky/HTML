@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang=pl>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+</style>
+</head>
+<body>
+<h2>Tekst</h2>
+<div id="h1">
+</div>
+<textarea id="myArea" oninput="licz()"></textarea>
+ilość słów: <span id="licznik"></span>
+
+
+<script>
+const myarea =document.getElementById("myArea")
+const licznik =document.getElementById("licznik")
+
+
+
+function licz() {
+    let text = myarea.value
+
+    let slowa = text.split(" ")
+    let ilosc = slowa.length
+    licznik.innerText = ilosc
+
+    if(ilosc>100){
+        document.text
+        alert("za dużo słów!")
+		licznik.style.color="red"
+    }
+}
+
+
+</script>
+</body>
+</html>
